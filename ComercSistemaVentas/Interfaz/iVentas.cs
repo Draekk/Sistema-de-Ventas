@@ -38,6 +38,7 @@ namespace ComercSistemaVentas.Interfaz
             btnPagar.Enabled = false;
             pnlEgresos.Visible = false;
             pnlCambio.Visible = false;
+            pnlExportarExcel.Visible = false;
             pnlDescuento.Enabled = false;
 
             chbxDescuento.Checked = false;
@@ -605,6 +606,43 @@ namespace ComercSistemaVentas.Interfaz
                 lblTotal.Text = PrecioTotal().ToString("C", CultureInfo.CurrentCulture);
                 lblMensajeDesc.Visible = false;
             }
+        }
+
+        private void btnExportarExcel_Click(object sender, EventArgs e)
+        {
+            pnlExportarExcel.Visible = true;
+            pnlPrincipal.Enabled = false;
+        }
+
+        private void btnCloseExportarExcel_Click(object sender, EventArgs e)
+        {
+            pnlExportarExcel.Visible = false;
+            pnlPrincipal.Enabled = true;
+        }
+
+        private void btnSaveSheet_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtFileName.Text != "" && dtVenta.Rows.Count > 0)
+                {
+                    CreacionXLSX creacionXLSX = new CreacionXLSX(txtFileName.Text.Trim() + DateTime.Now.ToLongDateString());
+                    creacionXLSX.DocumentCreation(dtVenta);
+                }
+                else if(txtFileName.Text == "")
+                {
+                    CreacionXLSX creacionXLSX = new CreacionXLSX("Venta-N" + NumeroVenta() + "-" + DateTime.Now.ToLongDateString());
+                    creacionXLSX.DocumentCreation(dtVenta);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            txtFileName.Text = "";
+            pnlExportarExcel.Visible = false;
+            pnlPrincipal.Enabled = true;
         }
     }
 }

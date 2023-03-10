@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(iVentas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
+            this.btnExportarExcel = new System.Windows.Forms.Button();
             this.pnlDescuento = new System.Windows.Forms.Panel();
             this.lblMensajeDesc = new System.Windows.Forms.Label();
             this.txtDescuento = new System.Windows.Forms.TextBox();
@@ -67,6 +68,11 @@
             this.txtMotivo_E = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtMonto_E = new System.Windows.Forms.TextBox();
+            this.pnlExportarExcel = new System.Windows.Forms.Panel();
+            this.btnCloseExportarExcel = new System.Windows.Forms.PictureBox();
+            this.btnSaveSheet = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtFileName = new System.Windows.Forms.TextBox();
             this.pnlPrincipal.SuspendLayout();
             this.pnlDescuento.SuspendLayout();
             this.pnlCambio.SuspendLayout();
@@ -75,10 +81,14 @@
             this.pnlEgresos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar_E)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEgresar)).BeginInit();
+            this.pnlExportarExcel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCloseExportarExcel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSaveSheet)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlPrincipal
             // 
+            this.pnlPrincipal.Controls.Add(this.btnExportarExcel);
             this.pnlPrincipal.Controls.Add(this.pnlDescuento);
             this.pnlPrincipal.Controls.Add(this.chbxDescuento);
             this.pnlPrincipal.Controls.Add(this.label9);
@@ -103,6 +113,24 @@
             this.pnlPrincipal.Name = "pnlPrincipal";
             this.pnlPrincipal.Size = new System.Drawing.Size(874, 587);
             this.pnlPrincipal.TabIndex = 0;
+            // 
+            // btnExportarExcel
+            // 
+            this.btnExportarExcel.BackColor = System.Drawing.Color.GreenYellow;
+            this.btnExportarExcel.FlatAppearance.BorderColor = System.Drawing.Color.PaleTurquoise;
+            this.btnExportarExcel.FlatAppearance.BorderSize = 2;
+            this.btnExportarExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportarExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportarExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExportarExcel.Image")));
+            this.btnExportarExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExportarExcel.Location = new System.Drawing.Point(241, 6);
+            this.btnExportarExcel.Name = "btnExportarExcel";
+            this.btnExportarExcel.Size = new System.Drawing.Size(152, 48);
+            this.btnExportarExcel.TabIndex = 20;
+            this.btnExportarExcel.Text = "EXPORTAR VENTA";
+            this.btnExportarExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExportarExcel.UseVisualStyleBackColor = false;
+            this.btnExportarExcel.Click += new System.EventHandler(this.btnExportarExcel_Click);
             // 
             // pnlDescuento
             // 
@@ -394,23 +422,23 @@
             this.dgvListaVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaVenta.BackgroundColor = System.Drawing.Color.LightYellow;
             this.dgvListaVenta.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListaVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListaVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvListaVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListaVenta.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListaVenta.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvListaVenta.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvListaVenta.Location = new System.Drawing.Point(7, 116);
             this.dgvListaVenta.Name = "dgvListaVenta";
@@ -534,12 +562,68 @@
             this.txtMonto_E.Size = new System.Drawing.Size(188, 29);
             this.txtMonto_E.TabIndex = 2;
             // 
+            // pnlExportarExcel
+            // 
+            this.pnlExportarExcel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlExportarExcel.Controls.Add(this.btnCloseExportarExcel);
+            this.pnlExportarExcel.Controls.Add(this.btnSaveSheet);
+            this.pnlExportarExcel.Controls.Add(this.label11);
+            this.pnlExportarExcel.Controls.Add(this.txtFileName);
+            this.pnlExportarExcel.Location = new System.Drawing.Point(245, 3);
+            this.pnlExportarExcel.Name = "pnlExportarExcel";
+            this.pnlExportarExcel.Size = new System.Drawing.Size(300, 68);
+            this.pnlExportarExcel.TabIndex = 21;
+            // 
+            // btnCloseExportarExcel
+            // 
+            this.btnCloseExportarExcel.BackColor = System.Drawing.Color.Transparent;
+            this.btnCloseExportarExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseExportarExcel.Image")));
+            this.btnCloseExportarExcel.Location = new System.Drawing.Point(273, -1);
+            this.btnCloseExportarExcel.Name = "btnCloseExportarExcel";
+            this.btnCloseExportarExcel.Size = new System.Drawing.Size(23, 20);
+            this.btnCloseExportarExcel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCloseExportarExcel.TabIndex = 7;
+            this.btnCloseExportarExcel.TabStop = false;
+            this.btnCloseExportarExcel.Click += new System.EventHandler(this.btnCloseExportarExcel_Click);
+            // 
+            // btnSaveSheet
+            // 
+            this.btnSaveSheet.BackColor = System.Drawing.Color.Transparent;
+            this.btnSaveSheet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.btnSaveSheet.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveSheet.Image")));
+            this.btnSaveSheet.Location = new System.Drawing.Point(260, 20);
+            this.btnSaveSheet.Name = "btnSaveSheet";
+            this.btnSaveSheet.Size = new System.Drawing.Size(36, 32);
+            this.btnSaveSheet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSaveSheet.TabIndex = 6;
+            this.btnSaveSheet.TabStop = false;
+            this.btnSaveSheet.Click += new System.EventHandler(this.btnSaveSheet_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(3, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(147, 20);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Nombre de Archivo:";
+            // 
+            // txtFileName
+            // 
+            this.txtFileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFileName.Location = new System.Drawing.Point(7, 23);
+            this.txtFileName.Name = "txtFileName";
+            this.txtFileName.Size = new System.Drawing.Size(245, 29);
+            this.txtFileName.TabIndex = 2;
+            // 
             // iVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(879, 594);
+            this.ClientSize = new System.Drawing.Size(878, 591);
+            this.Controls.Add(this.pnlExportarExcel);
             this.Controls.Add(this.pnlEgresos);
             this.Controls.Add(this.pnlPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -563,6 +647,10 @@
             this.pnlEgresos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar_E)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEgresar)).EndInit();
+            this.pnlExportarExcel.ResumeLayout(false);
+            this.pnlExportarExcel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCloseExportarExcel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSaveSheet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -605,5 +693,11 @@
         private System.Windows.Forms.TextBox txtDescuento;
         private System.Windows.Forms.CheckBox chbxDescuento;
         private System.Windows.Forms.Label lblMensajeDesc;
+        private System.Windows.Forms.Button btnExportarExcel;
+        private System.Windows.Forms.Panel pnlExportarExcel;
+        private System.Windows.Forms.PictureBox btnCloseExportarExcel;
+        private System.Windows.Forms.PictureBox btnSaveSheet;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtFileName;
     }
 }
