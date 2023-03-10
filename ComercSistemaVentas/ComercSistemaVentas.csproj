@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C76886E0-9246-46F9-B802-954884E21668}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ComercSistemaVentas</RootNamespace>
+    <AssemblyName>ComercSistemaVentas</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Conexion\ConexionDB.cs" />
+    <Compile Include="Interfaz\iCierreCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\iCierreCaja.Designer.cs">
+      <DependentUpon>iCierreCaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\iProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\iProductos.Designer.cs">
+      <DependentUpon>iProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\iMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\iMenuPrincipal.Designer.cs">
+      <DependentUpon>iMenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\iRegistroVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\iRegistroVentas.Designer.cs">
+      <DependentUpon>iRegistroVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\iUsoProgramador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\iUsoProgramador.Designer.cs">
+      <DependentUpon>iUsoProgramador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\iVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\iVentas.Designer.cs">
+      <DependentUpon>iVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objetos\DetalleCaja.cs" />
+    <Compile Include="Objetos\Producto.cs" />
+    <Compile Include="Operadores\Caja_O.cs" />
+    <Compile Include="Operadores\Egresos_O.cs" />
+    <Compile Include="Operadores\Productos_O.cs" />
+    <Compile Include="Operadores\Programador_O.cs" />
+    <Compile Include="Operadores\Ventas_O.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Interfaz\iCierreCaja.resx">
+      <DependentUpon>iCierreCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\iMenuPrincipal.resx">
+      <DependentUpon>iMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\iProductos.resx">
+      <DependentUpon>iProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\iRegistroVentas.resx">
+      <DependentUpon>iRegistroVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\iUsoProgramador.resx">
+      <DependentUpon>iUsoProgramador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\iVentas.resx">
+      <DependentUpon>iVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
